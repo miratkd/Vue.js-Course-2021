@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>vue 3 basic</title>
+    <style>
+      .box{
+        background-color: purple;
+        height: 200px;
+        width: 200px;
+      }
+      [v-cloak] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" v-cloak>
+      {{greeting}}
+      <input @keyup.enter="greet" type="text" v-model="greeting">
+
+      <hr>
+
+      <button v-on:click="toggleBox">Toggle box</button>
+      <div v-if="isVisible" class="box"></div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      let app = Vue.createApp({
+        data: function() {
+          return {
+            greeting: 'Hello Vue 3!',
+            isVisible: false
+          }
+        },
+        methods: {
+          toggleBox(){
+            this.isVisible = !this.isVisible
+          },
+          greet(){
+            console.log(this.greeting)
+          }
+        }
+      })
+      app.mount('#app')
+    </script>
+  </body>
+</html>
