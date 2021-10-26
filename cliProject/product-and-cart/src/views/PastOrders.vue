@@ -1,13 +1,9 @@
 <template>
-  <div>Home</div>
+  <div>PastOrders</div>
 </template>
 
 <script>
-
 export default {
-  name: 'Home',
-  components: {
-
-  }
+  name: 'PastOrders'
 }
 </script>
